@@ -5,14 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Object Model</title>
+    <style>
+    .hide {
+        display: none;
+    }
+    .square {
+        height: 100px;
+        width: 100px;
+        background-color: yellow;
+    }
+    .square.blue {
+        background-color: blue;
+    }
+        </style>
 </head>
 <body>
 
     <h1 class="output">Hello World</h1>
     <div class="output">Test</div>
+    <button onclick="reveal(this)">Click here!</button>
     
-    <a href="https://google.com">Ask Google</a>
+    <a id="friend" class="fancy boxed" href="https://www.google.com">Ask my
+        friend here.</a>
+
+    <div id="shape" class="square blue"></div>
+    <button onclick="changeVisibility()">Disappear!</button>
+
+    <input type="submit" value="Click Me" onclick="stop()">
 
     <script src="./dom.js"></script>
+    <script>
+        function reveal(el){
+            console.log(el.parentElement);
+        }
+    </script>
 </body>
 </html>

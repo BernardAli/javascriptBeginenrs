@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Content and Event Listeners</title>
+</head>
+<body>
+    <p id="unique" onclick="magic()">Click here for magic!</p>
+    <button type="button" onclick="triggerSomething()">Click</button>
+    <div id="divvy" onmouseover="changeColor()" style="width: 100px; height: 100px; background-color: pink;">
+
+
+    <script src="./interactive.js"></script>
+    <script>
+        window.onload = function donenow() {
+            console.log("hi");
+            document.getElementById("divvy").addEventListener("mousedown",
+            function() { changeColor(this, "green"); });
+            document.getElementById("divvy").addEventListener("mouseup",
+            function() { changeColor(this, "yellow"); });
+            document.getElementById("divvy").addEventListener("dblclick",
+            function() { changeColor(this, "black"); });
+            document.getElementById("divvy").addEventListener("mouseout",
+            function() { changeColor(this, "blue"); });
+        }
+        console.log("hi2");
+        function changeColor(el, color) {
+            el.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
